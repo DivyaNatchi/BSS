@@ -1,9 +1,9 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Trigger the deployment only when pushing to the main branch
+      - main # Trigger deployment only when pushing to the main branch
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "16" # Specify the version of Node.js you are using
@@ -23,29 +23,29 @@ jobs:
         run: npm install # Install dependencies using npm
 
       - name: Build project
-        run: npm run build # Create a production-ready build (by default React uses the 'build' folder)
+        run: npm run build # Vite build command generates the output in ./dist folder
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./build # Use the default React build folder
+          path: ./dist # Vite stores the production build in the 'dist' folder
 
   deploy:
     name: Deploy
     needs: build # Ensure deployment only happens after the build job finishes
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' # Ensure deployment only happens on main branch
+    if: github.ref == 'refs/heads/main' # Ensure deployment only happens on the main branch
 
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./build # Download the build files from the previous step
+          path: ./dist # Download the production build from the previous step
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # Use the automatically provided GitHub token
-          publish_dir: ./build # Specify the folder to be deployed (default React build folder)
+          publish_dir: ./dist # Specify the 'dist' folder as the folder to deploy
