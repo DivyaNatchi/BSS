@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - main # Trigger the deployment only when pushing to the main branch
 
 jobs:
   build:
@@ -16,34 +16,36 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: "16" # Specify the version of Node.js you are using
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install # Install dependencies using npm
 
       - name: Build project
-        run: npm run build
+        run: npm run build # Create a production-ready build (by default React uses the 'build' folder)
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./build # Use the default React build folder
 
   deploy:
     name: Deploy
-    needs: build
+    needs: build # Ensure deployment only happens after the build job finishes
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' # Ensure deployment only happens on main branch
 
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./build # Download the build files from the previous step
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Use the automatically provided GitHub token
+          publish_dir: ./build # Specify the folder to be deployed (default React build folder)
