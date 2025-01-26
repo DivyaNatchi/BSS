@@ -1,7 +1,18 @@
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about ul {
+.about .about-us {
+  text-align: left;
+}
+
+.about i,
+.about span {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--accent-color);
+}
+
+/* .about ul {
   list-style: none;
   padding: 0;
 }
@@ -47,4 +58,4 @@
 
 .about .read-more:hover i {
   transform: translate(5px, 0);
-}
+} */

@@ -1,17 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
-import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "../assets/css/whyUsSection.css";
-
+import Aos from "aos";
 // Import image
-import whyUsImage from "../assets/img/why-us.png"; // Make sure the path is correct for your project
+import whyUsImage from "../assets/img/why-us.png";
 
 export default function WhyUsSection() {
-  const [activeFaq, setActiveFaq] = useState(1); // State to manage active FAQ
+  // State to manage expanded status for each FAQ
+  const [activeFaqs, setActiveFaqs] = useState({
+    1: true,
+    2: false,
+    3: false,
+    4: false,
+  });
 
-  // Toggle active FAQ
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Control animation duration
+      easing: "ease-out", // Smooth easing
+      once: true, // Animation happens only once
+    });
+  }, []);
+
+  // Toggle active FAQ, allowing multiple to stay expanded
   const toggleFaq = (index) => {
-    setActiveFaq(activeFaq === index ? null : index);
+    setActiveFaqs((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index], // Toggle the state of the clicked FAQ
+    }));
   };
 
   return (
@@ -29,13 +46,16 @@ export default function WhyUsSection() {
               data-aos-delay="100"
             >
               <h3>
-                <span>Eum ipsam laborum deleniti </span>
-                <strong>velit pariatur architecto aut nihil</strong>
+                <span>Innovative Solutions for a Growing Future </span>
+                <strong>Empowering Your Business, One Step at a Time</strong>
               </h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-                aute irure dolor in reprehenderit.
+                Choosing Byte Size IT Solutions means partnering with a team
+                that’s driven to see your business grow. We tailor each solution
+                to meet the exact needs of SMEs, combining innovation with
+                affordability. With us, technology becomes your greatest ally —
+                enabling your business to flourish while staying within budget.
+                Let’s build a brighter, tech-powered future together!
               </p>
             </div>
 
@@ -45,75 +65,48 @@ export default function WhyUsSection() {
               data-aos-delay="200"
             >
               {/* FAQ Items */}
-              <div
-                className={`faq-item ${activeFaq === 1 ? "faq-active" : ""}`}
-              >
-                <h3 onClick={() => toggleFaq(1)}>
-                  <span>01</span> Non consectetur a erat nam at lectus urna
-                  duis?
-                </h3>
-                {activeFaq === 1 && (
-                  <div className="faq-content">
-                    <p>
-                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna
-                      id volutpat lacus laoreet non curabitur gravida. Venenatis
-                      lectus magna fringilla urna porttitor rhoncus dolor purus
-                      non.
-                    </p>
-                  </div>
-                )}
-                <i
-                  className={`faq-toggle bi ${activeFaq === 1 ? "bi-chevron-down" : "bi-chevron-right"}`}
-                ></i>
-              </div>
-
-              <div
-                className={`faq-item ${activeFaq === 2 ? "faq-active" : ""}`}
-              >
-                <h3 onClick={() => toggleFaq(2)}>
-                  <span>02</span> Feugiat scelerisque varius morbi enim nunc
-                  faucibus a pellentesque?
-                </h3>
-                {activeFaq === 2 && (
-                  <div className="faq-content">
-                    <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque
-                      habitant morbi. Id interdum velit laoreet id donec
-                      ultrices. Fringilla phasellus faucibus scelerisque
-                      eleifend donec pretium. Est pellentesque elit ullamcorper
-                      dignissim. Mauris ultrices eros in cursus turpis massa
-                      tincidunt dui.
-                    </p>
-                  </div>
-                )}
-                <i
-                  className={`faq-toggle bi ${activeFaq === 2 ? "bi-chevron-down" : "bi-chevron-right"}`}
-                ></i>
-              </div>
-
-              <div
-                className={`faq-item ${activeFaq === 3 ? "faq-active" : ""}`}
-              >
-                <h3 onClick={() => toggleFaq(3)}>
-                  <span>03</span> Dolor sit amet consectetur adipiscing elit
-                  pellentesque?
-                </h3>
-                {activeFaq === 3 && (
-                  <div className="faq-content">
-                    <p>
-                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices
-                      sagittis orci. Faucibus pulvinar elementum integer enim.
-                      Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                      tellus pellentesque eu tincidunt. Lectus urna duis
-                      convallis convallis tellus. Urna molestie at elementum eu
-                      facilisis sed odio morbi quis.
-                    </p>
-                  </div>
-                )}
-                <i
-                  className={`faq-toggle bi ${activeFaq === 3 ? "bi-chevron-down" : "bi-chevron-right"}`}
-                ></i>
-              </div>
+              {[
+                {
+                  id: 1,
+                  title: "Developing Solutions for SMEs",
+                  content: `At Byte Size, we're not just service providers â€“ we're also product developers. We design and build our own products and services specifically tailored for SMEs. Our goal is to provide robust, user-friendly solutions that address the unique pain points of small and medium-sized businesses.`,
+                },
+                {
+                  id: 2,
+                  title: "Affordable Pricing",
+                  content: `We believe that technology should be accessible to all businesses, regardless of size or budget. That's why we offer our products and services at very reasonable prices, ensuring that SMEs can leverage the power of technology without breaking the bank.
+`,
+                },
+                {
+                  id: 3,
+                  title: "Beyond Business",
+                  content: `At Byte Size IT Solutions, we believe in giving back to the community. As part of our Corporate Social Responsibility (CSR) efforts, we develop products that address everyday needs, supporting small businesses and the public free of charge.`,
+                },
+                {
+                  id: 4,
+                  title: "Our Philosophy",
+                  content: `We don't just solve problems; we craft solutions that empower businesses, promote growth, and support our community. Our team is dedicated to making a positive impact through technology, and we're excited to partner with you on your digital journey.`,
+                },
+              ].map((faq) => (
+                <div
+                  key={faq.id}
+                  className={`faq-item ${activeFaqs[faq.id] ? "faq-active" : ""}`}
+                >
+                  <h3 onClick={() => toggleFaq(faq.id)}>
+                    <span>{`0${faq.id}`}</span> {faq.title}
+                  </h3>
+                  {activeFaqs[faq.id] && (
+                    <div className="faq-content">
+                      <p>{faq.content}</p>
+                    </div>
+                  )}
+                  <i
+                    // className={`faq-toggle bi ${activeFaqs[faq.id] ? "bi-chevron-down" : "bi-chevron-right"}`}
+                    className={`faq-toggle bi bi-chevron-right`}
+                    onClick={() => toggleFaq(faq.id)}
+                  ></i>
+                </div>
+              ))}
             </div>
           </Col>
 
@@ -125,6 +118,8 @@ export default function WhyUsSection() {
               className="img-fluid"
               data-aos="zoom-in"
               data-aos-delay="100"
+              data-aos-duration="1200" // Set duration for image animation
+              data-aos-easing="ease-out-cubic" // Smooth easing for image zoom
             />
           </Col>
         </Row>

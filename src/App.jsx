@@ -27,7 +27,7 @@ export default function () {
       <CallToActionSection />
       <PortfolioSection />
       <TeamSection />
-      <PricingSection />
+      {/* <PricingSection /> */}
       <TestimonialsSection />
       <ContactSection />
       <Footer />

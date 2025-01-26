@@ -3,6 +3,7 @@
 --------------------------------------------------------------*/
 .why-us {
   padding: 30px 0;
+  transition: transform 0.8s ease-out;
 }
 
 .why-us .content h3 {
@@ -21,6 +22,7 @@
   margin-bottom: 20px;
   box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: transform 0.3s ease; /* Add transition to faq-item */
 }
 
 .why-us .faq-container .faq-item:last-child {
@@ -32,7 +34,7 @@
   font-size: 17px;
   line-height: 24px;
   margin: 0 30px 0 0;
-  transition: 0.3s;
+  transition: color 0.3s ease; /* Transition color */
   cursor: pointer;
 }
 
@@ -49,14 +51,16 @@
 .why-us .faq-container .faq-item .faq-content {
   display: grid;
   grid-template-rows: 0fr;
-  transition: 0.3s ease-in-out;
-  visibility: hidden;
   opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease; /* Add smooth transitions for visibility and opacity */
+  overflow: hidden;
 }
 
 .why-us .faq-container .faq-item .faq-content p {
   margin-bottom: 0;
-  overflow: hidden;
 }
 
 .why-us .faq-container .faq-item .faq-icon {
@@ -75,7 +79,9 @@
   right: 20px;
   font-size: 16px;
   line-height: 0;
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
   cursor: pointer;
 }
 
@@ -89,14 +95,15 @@
 
 .why-us .faq-container .faq-active .faq-content {
   grid-template-rows: 1fr;
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
   padding-top: 10px;
 }
 
 .why-us .faq-container .faq-active .faq-toggle {
   transform: rotate(90deg);
   color: var(--accent-color);
+  transition: transform 0.3s ease;
 }
 
 .why-us .why-us-img {
@@ -107,4 +114,23 @@
 
 .why-us .why-us-img img {
   max-height: 70%;
+  transition: transform 0.8s ease-out; /* Add smooth transition for image */
+}
+
+.why-us .why-us-img img[data-aos="zoom-in"] {
+  transform: scale(1); /* Ensure smooth zoom-in effect */
+}
+
+/* AOS-specific animations (optional) */
+[data-aos="zoom-in"] {
+  transform: scale(1); /* Initial scale */
+  opacity: 0;
+  transition:
+    transform 0.8s ease-out,
+    opacity 0.8s ease-out; /* Smooth zoom-in */
+}
+
+[data-aos="zoom-in"].aos-animate {
+  opacity: 1;
+  transform: scale(1.05); /* Final scale after animation */
 }

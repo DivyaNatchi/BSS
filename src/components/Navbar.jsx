@@ -121,7 +121,7 @@ const NavBar = () => {
                   Team
                 </Link>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <Link
                   to="pricing"
                   smooth={true}
@@ -130,7 +130,7 @@ const NavBar = () => {
                 >
                   Pricing
                 </Link>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <Link
                   to="contact"

@@ -23,8 +23,11 @@ export default function Hero() {
           >
             <h1>Better Solutions For Your Business</h1>
             <p>
-              We are a team of talented designers making websites with Bootstrap
+              Your partner in growth! Byte Size IT Solutions delivers
+              affordable, innovative tech to help SMEs thrive in today’s digital
+              world.
             </p>
+
             <div className="d-flex">
               <Button href="#about" color="primary" className="btn-get-started">
                 Get Started
