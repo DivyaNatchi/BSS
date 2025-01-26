@@ -1,6 +1,13 @@
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+
+.services .services-desc {
+  text-align: left;
+}
+.service-item p {
+  text-align: justify;
+}
 .services .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);

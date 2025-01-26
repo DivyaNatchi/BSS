@@ -69,7 +69,7 @@ export default function WhyUsSection() {
                 {
                   id: 1,
                   title: "Developing Solutions for SMEs",
-                  content: `At Byte Size, we're not just service providers â€“ we're also product developers. We design and build our own products and services specifically tailored for SMEs. Our goal is to provide robust, user-friendly solutions that address the unique pain points of small and medium-sized businesses.`,
+                  content: `At Byte Size, we're not just service providers. we're also product developers. We design and build our own products and services specifically tailored for SMEs. Our goal is to provide robust, user-friendly solutions that address the unique pain points of small and medium-sized businesses.`,
                 },
                 {
                   id: 2,
