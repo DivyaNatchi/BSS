@@ -68,7 +68,7 @@ const servicesData = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="services section light-background">
+    <section id="services" className="services section">
       <Container className="section-title" data-aos="fade-up">
         <h2>Services</h2>
         <p className="services-desc">

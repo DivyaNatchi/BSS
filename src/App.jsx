@@ -22,9 +22,9 @@ export default function () {
       <TechlogosSection />
       <AboutSection />
       <WhyUsSection />
-      <SkillsSection />
+      {/* <SkillsSection /> */}
       <ServicesSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
       <PortfolioSection />
       <TeamSection />
       {/* <PricingSection /> */}

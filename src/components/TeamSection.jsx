@@ -65,7 +65,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section id="team" className="team section">
+    <section id="team" className="team section light-background">
       {/* Section Title */}
       <div className="container section-title" data-aos="fade-up">
         <h2>Team</h2>
