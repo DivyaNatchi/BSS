@@ -97,7 +97,6 @@
   font-size: 16px;
   font-weight: bold;
   position: relative;
-  padding-bottom: 12px;
 }
 
 .footer .footer-links {
@@ -121,10 +120,6 @@
   padding: 10px 0;
   display: flex;
   align-items: center;
-}
-
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
 }
 
 .footer .footer-links ul a {
@@ -163,39 +158,4 @@
 .footer .credits {
   margin-top: 6px;
   font-size: 13px;
-}
-
-/*--------------------------------------------------------------
-  # Preloader
-  --------------------------------------------------------------*/
-#preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 999999;
-  overflow: hidden;
-  background: var(--background-color);
-  transition: all 0.6s ease-out;
-}
-
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
-}
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }

@@ -74,10 +74,10 @@ export default function Footer() {
       </div>
 
       {/* Footer Links Section */}
-      <Container className="footer-top">
-        <Row className="gy-4">
+      <Container className="footer-top justify-content-center">
+        <Row className="gy-4 ">
           {/* About Section */}
-          <Col lg={4} md={6} className="footer-about">
+          <Col lg={6} md={6} className="footer-about">
             <Link
               to="hero"
               className="d-flex align-items-center"
@@ -99,69 +99,56 @@ export default function Footer() {
           </Col>
 
           {/* Useful Links Section */}
-          <Col lg={2} md={3} className="footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li>
-                <i className="bi bi-chevron-right"></i> <a href="#">Home</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right"></i> <a href="#">About us</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right"></i> <a href="#">Services</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right"></i>{" "}
-                <a href="#">Terms of service</a>
-              </li>
-            </ul>
-          </Col>
+          {/* Useful Links and Follow Us Section */}
+          <Col lg={6} md={6} className="footer-links">
+            {/* Row for Useful Links */}
+            <Row className="d-flex align-items-start mb-4">
+              <Col>
+                <h4>Useful Links</h4>
+                <ul
+                  className="d-flex justify-content-start list-unstyled"
+                  style={{ gap: "20px" }} // Style added to align links horizontally with some space
+                >
+                  <li>
+                    <i className="bi bi-chevron-right"></i> <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <i className="bi bi-chevron-right"></i>
+                    <a href="#about">About us</a>
+                  </li>
+                  <li>
+                    <i className="bi bi-chevron-right"></i>
+                    <a href="#services">Services</a>
+                  </li>
+                  <li>
+                    <i className="bi bi-chevron-right"></i>
+                    <a href="#portfolio">Portfolio</a>
+                  </li>
+                </ul>
+              </Col>
+            </Row>
 
-          {/* Our Services Section */}
-          <Col lg={2} md={3} className="footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li>
-                <i className="bi bi-chevron-right"></i>{" "}
-                <a href="#">Web Design</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right"></i>{" "}
-                <a href="#">Web Development</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right"></i>{" "}
-                <a href="#">Product Management</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right"></i>{" "}
-                <a href="#">Marketing</a>
-              </li>
-            </ul>
-          </Col>
-
-          {/* Follow Us Section */}
-          <Col lg={4} md={12}>
-            <h4>Follow Us</h4>
-            <p>
-              Cras fermentum odio eu feugiat lide par naso tierra videa magna
-              derita valies
-            </p>
-            <div className="social-links d-flex">
-              <a href="#">
-                <i className="bi bi-twitter"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-instagram"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-linkedin"></i>
-              </a>
-            </div>
+            {/* Row for Follow Us */}
+            <Row className="d-flex align-items-start">
+              <Col>
+                <h4>Follow Us</h4>
+                <div className="social-links d-flex" style={{ gap: "20px" }}>
+                  {/* Social media links aligned horizontally */}
+                  {/* <a href="#">
+                      <i className="bi bi-twitter"></i>
+                    </a>
+                    <a href="#">
+                      <i className="bi bi-facebook"></i>
+                    </a>
+                    <a href="#">
+                      <i className="bi bi-instagram"></i>
+                    </a> */}
+                  <a href="https://www.linkedin.com/company/byte-size-it-solutions-ltd">
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                </div>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

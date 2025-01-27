@@ -32,15 +32,6 @@ export default function Hero() {
               <Button href="#about" color="primary" className="btn-get-started">
                 Get Started
               </Button>
-              <Button
-                href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                color="link"
-                className="glightbox btn-watch-video d-flex align-items-center"
-              >
-                {/* <BsPlayCircle className="me-2" /> */}
-                <i className="bi bi-play-circle me-2"></i>
-                <span>Watch Video</span>
-              </Button>
             </div>
           </Col>
           {/* Right side image */}

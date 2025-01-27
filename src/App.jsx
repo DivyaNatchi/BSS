@@ -1,7 +1,7 @@
 // App.jsx
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ClientsSection from "./components/ClientsSection";
+import TechlogosSection from "./components/TechLogosSection";
 import AboutSection from "./components/AboutSection";
 import WhyUsSection from "./components/WhyUsSection";
 import SkillsSection from "./components/SkillsSection";
@@ -19,7 +19,7 @@ export default function () {
     <>
       <Navbar />
       <Hero />
-      <ClientsSection />
+      <TechlogosSection />
       <AboutSection />
       <WhyUsSection />
       <SkillsSection />
