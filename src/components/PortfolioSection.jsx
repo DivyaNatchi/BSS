@@ -89,10 +89,12 @@ export default function PortfolioSection() {
     <section id="portfolio" className="portfolio section">
       {/* Section Title */}
       <Container className="section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
+        <h2>Our Portfolio</h2>
         <p>
-          Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-          consectetur velit
+          Imagine a world where your ideas come to life, where your business
+          evolves into a digital powerhouse, and where growth is not just a
+          possibility—it’s a guarantee. At Byte Size IT Solutions Pvt. Limited,
+          we are not just service providers; we are dream enablers.
         </p>
       </Container>
 

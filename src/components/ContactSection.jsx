@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
 import "../assets/css/contactSection.css";
 
 export default function ContactSection() {
@@ -18,7 +27,6 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     // Handle form submission logic here (e.g., sending data to an API)
     setStatus("Message sent! Thank you!");
     setFormData({
@@ -32,11 +40,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="contact section light-background">
       <Container className="section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>
-          Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-          consectetur velit
-        </p>
+        <h2>Contact Us</h2>
       </Container>
 
       <Container data-aos="fade-up" data-aos-delay="100">
@@ -102,56 +106,60 @@ export default function ContactSection() {
               >
                 <Row className="gy-4">
                   <Col md={6}>
-                    <Form.Group controlId="name-field">
-                      <Form.Label>Your Name</Form.Label>
-                      <Form.Control
+                    <FormGroup>
+                      <Label for="name-field">Your Name</Label>
+                      <Input
                         type="text"
                         name="name"
+                        id="name-field"
                         value={formData.name}
                         onChange={handleChange}
                         required
                       />
-                    </Form.Group>
+                    </FormGroup>
                   </Col>
 
                   <Col md={6}>
-                    <Form.Group controlId="email-field">
-                      <Form.Label>Your Email</Form.Label>
-                      <Form.Control
+                    <FormGroup>
+                      <Label for="email-field">Your Email</Label>
+                      <Input
                         type="email"
                         name="email"
+                        id="email-field"
                         value={formData.email}
                         onChange={handleChange}
                         required
                       />
-                    </Form.Group>
+                    </FormGroup>
                   </Col>
 
                   <Col md={12}>
-                    <Form.Group controlId="subject-field">
-                      <Form.Label>Subject</Form.Label>
-                      <Form.Control
+                    <FormGroup>
+                      <Label for="subject-field">Subject</Label>
+                      <Input
                         type="text"
                         name="subject"
+                        id="subject-field"
                         value={formData.subject}
                         onChange={handleChange}
                         required
                       />
-                    </Form.Group>
+                    </FormGroup>
                   </Col>
 
                   <Col md={12}>
-                    <Form.Group controlId="message-field">
-                      <Form.Label>Message</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        rows={10}
+                    <FormGroup>
+                      <Label for="message-field">Message</Label>
+                      <Input
+                        type="textarea"
                         name="message"
+                        id="message-field"
+                        rows={10}
                         value={formData.message}
                         onChange={handleChange}
                         required
                       />
-                    </Form.Group>
+                    </FormGroup>
                   </Col>
 
                   <Col md={12} className="text-center">
@@ -164,7 +172,9 @@ export default function ContactSection() {
                     >
                       {status}
                     </div>
-                    <Button type="submit">Send Message</Button>
+                    <Button type="submit" color="primary">
+                      Send Message
+                    </Button>
                   </Col>
                 </Row>
               </Form>

@@ -77,6 +77,8 @@ const NavBar = () => {
                   smooth={true}
                   duration={500}
                   className="nav-link"
+                  offset={-70}
+                  onClick={toggle}
                 >
                   Home
                 </Link>
@@ -87,8 +89,10 @@ const NavBar = () => {
                   smooth={true}
                   duration={500}
                   className="nav-link"
+                  offset={-70}
+                  onClick={toggle}
                 >
-                  About
+                  About Us
                 </Link>
               </NavItem>
               <NavItem>
@@ -97,8 +101,10 @@ const NavBar = () => {
                   smooth={true}
                   duration={500}
                   className="nav-link"
+                  offset={-70}
+                  onClick={toggle}
                 >
-                  Service
+                  Our Services
                 </Link>
               </NavItem>
               <NavItem>
@@ -107,8 +113,10 @@ const NavBar = () => {
                   smooth={true}
                   duration={500}
                   className="nav-link"
+                  offset={-70}
+                  onClick={toggle}
                 >
-                  Portfolio
+                  Our Portfolio
                 </Link>
               </NavItem>
               <NavItem>
@@ -117,28 +125,22 @@ const NavBar = () => {
                   smooth={true}
                   duration={500}
                   className="nav-link"
+                  offset={-70}
+                  onClick={toggle}
                 >
-                  Team
+                  Our Team
                 </Link>
               </NavItem>
-              {/* <NavItem>
-                <Link
-                  to="pricing"
-                  smooth={true}
-                  duration={500}
-                  className="nav-link"
-                >
-                  Pricing
-                </Link>
-              </NavItem> */}
               <NavItem>
                 <Link
                   to="contact"
                   smooth={true}
                   duration={500}
                   className="nav-link"
+                  offset={-70}
+                  onClick={toggle}
                 >
-                  Contact
+                  Contact Us
                 </Link>
               </NavItem>
             </Nav>
