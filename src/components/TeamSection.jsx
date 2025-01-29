@@ -6,7 +6,7 @@ import "../assets/css/teamSection.css"; // Custom CSS for Team Section
 import madhu from "../assets/img/team/madhu.jpg";
 import hema from "../assets/img/team/hema.jpg";
 import karthikeyan from "../assets/img/team/karthikeyan.jpg";
-import divya from "../assets/img/team/divya1.png";
+import divya from "../assets/img/team/divya2.jpg";
 
 const TeamSection = () => {
   const teamMembers = [
@@ -73,7 +73,7 @@ const TeamSection = () => {
                   <span>{member.position}</span>
                   <p>{member.description}</p>
                   <div className="social">
-                    <a href={member.socialLinks.linkedin}>
+                    <a href={member.socialLinks.linkedin} target="_blank">
                       <i className="bi bi-linkedin"></i>
                     </a>
                   </div>

@@ -98,11 +98,7 @@ export default function ServicesSection() {
                 <div className="icon">
                   <i className={`bi ${service.icon} icon`}></i>
                 </div>
-                <h4>
-                  <a href="#" className="stretched-link">
-                    {service.title}
-                  </a>
-                </h4>
+                <h4>{service.title}</h4>
                 {service.description.split("\n").map((line, index) => (
                   <p key={index}>{line}</p>
                 ))}

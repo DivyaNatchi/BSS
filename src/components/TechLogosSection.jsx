@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import AOS from "aos"; // If you're using AOS for animations
-import "aos/dist/aos.css"; // Import AOS styles
 import "../assets/css/TechlogosSection.css";
 
 // Importing techlogo images

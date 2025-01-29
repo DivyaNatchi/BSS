@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 import AOS from "aos"; // If you want to use the AOS library for animations
-import "aos/dist/aos.css"; // Import AOS styles
 import heroImage from "../assets/img/hero-img.png";
 import "../assets/css/hero.css";
 

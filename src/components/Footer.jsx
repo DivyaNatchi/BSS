@@ -110,28 +110,19 @@ export default function Footer() {
                   style={{ gap: "20px" }} // Style added to align links horizontally with some space
                 >
                   <li>
-                    <i className="bi bi-chevron-right"></i>{" "}
-                    <a href="#" target="_self">
-                      Home
-                    </a>
+                    <i className="bi bi-chevron-right"></i> <a href="#">Home</a>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <a href="#about" target="_self">
-                      About us
-                    </a>
+                    <a href="#about">About us</a>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <a href="#services" target="_self">
-                      Services
-                    </a>
+                    <a href="#services">Services</a>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <a href="#portfolio" target="_self">
-                      Portfolio
-                    </a>
+                    <a href="#portfolio">Portfolio</a>
                   </li>
                 </ul>
               </Col>
@@ -152,7 +143,10 @@ export default function Footer() {
                     <a href="#">
                       <i className="bi bi-instagram"></i>
                     </a> */}
-                  <a href="https://www.linkedin.com/company/byte-size-it-solutions-ltd">
+                  <a
+                    href="https://www.linkedin.com/company/byte-size-it-solutions-ltd"
+                    target="_blank"
+                  >
                     <i className="bi bi-linkedin"></i>
                   </a>
                 </div>

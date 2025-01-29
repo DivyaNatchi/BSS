@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import AOS from "aos"; // For animations (if using AOS)
-import "aos/dist/aos.css"; // Import AOS styles
 import "../assets/css/testimonialsSection.css";
 
 // Importing testimonial images
@@ -83,7 +82,7 @@ export default function TestimonialsSection() {
           autoplay={{
             delay: 5000,
           }}
-          slidesPerView="auto"
+          slidesPerView={1}
           pagination={{
             el: ".swiper-pagination",
             type: "bullets",
