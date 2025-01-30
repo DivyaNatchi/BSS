@@ -16,14 +16,11 @@
   height: 100%;
 }
 
-.services .service-item .icon {
-  margin-bottom: 10px;
-}
-
 .services .service-item .icon i {
   color: var(--accent-color);
   font-size: 36px;
   transition: 0.3s;
+  padding-right: 1rem;
 }
 
 .services .service-item h4 {

@@ -148,6 +148,11 @@
   transition: 0.5s;
 }
 
+.btn-portfolio_close:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
 /* General container styling */
 .portfolio-container {
   margin: 0 auto;

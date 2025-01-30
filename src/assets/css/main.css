@@ -83,7 +83,7 @@ h6 {
 
 /* PHP Email Form Messages
 ------------------------------*/
-.php-email-form .error-message {
+.email-form .error-message {
   display: none;
   background: #df1529;
   color: #ffffff;
@@ -93,17 +93,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
+.email-form .loading {
   display: none;
   background: var(--surface-color);
   text-align: center;
@@ -111,7 +101,7 @@ h6 {
   margin-bottom: 24px;
 }
 
-.php-email-form .loading:before {
+.email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -120,10 +110,10 @@ h6 {
   margin: 0 10px -6px 0;
   border: 3px solid var(--accent-color);
   border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
+  animation: email-form-loading 1s linear infinite;
 }
 
-@keyframes php-email-form-loading {
+@keyframes email-form-loading {
   0% {
     transform: rotate(0deg);
   }
@@ -660,4 +650,64 @@ section,
   100% {
     transform: rotate(360deg);
   }
+}
+
+/*--------------------------------------------------------------
+  # captcha design
+  --------------------------------------------------------------*/
+
+.captcha-text {
+  font-size: 24px;
+  /* background-image: linear-gradient(45deg, #f06, #48f); */
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.captcha-letter {
+  background-image: linear-gradient(45deg, #f1305a, #3c75e0);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-right: 5px;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Apply different rotations to each letter */
+.captcha-letter:nth-child(1) {
+  transform: rotate(-15deg);
+}
+
+.captcha-letter:nth-child(2) {
+  transform: rotate(10deg);
+}
+
+.captcha-letter:nth-child(3) {
+  transform: rotate(20deg);
+}
+
+.captcha-letter:nth-child(4) {
+  transform: rotate(-25deg);
+}
+
+.captcha-letter:nth-child(5) {
+  transform: rotate(30deg);
+}
+
+.captcha-letter:nth-child(6) {
+  transform: rotate(-35deg);
+}
+
+.refresh-icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.refresh-icon:hover {
+  color: var(--accent-color);
 }

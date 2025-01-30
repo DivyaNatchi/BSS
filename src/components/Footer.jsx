@@ -3,22 +3,8 @@ import { Container, Row, Col, Form, Button } from "reactstrap";
 import "../assets/css/footer.css";
 import { Link } from "react-scroll";
 
-export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("");
+export default function Footer({ testimonialModalOpen, portfolioModalOpen }) {
   const [isVisible, setIsVisible] = useState(false);
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-
-    // Simulating a successful subscription
-    setStatus("Your subscription request has been sent. Thank you!");
-    setEmail("");
-  };
 
   // Function to toggle the visibility of the scroll-to-top button
   const toggleScrollTop = () => {
@@ -44,35 +30,6 @@ export default function Footer() {
 
   return (
     <footer id="footer" className="footer">
-      {/* Newsletter Section */}
-      <div className="footer-newsletter">
-        <Container>
-          <Row className="justify-content-center text-center">
-            <Col lg={6}>
-              <h4>Join Our Newsletter</h4>
-              <p>
-                Subscribe to our newsletter and receive the latest news about
-                our products and services!
-              </p>
-              <Form onSubmit={handleSubscribe} className="php-email-form">
-                <div className="newsletter-form">
-                  <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                    placeholder="Enter your email"
-                    required
-                  />
-                  <Button type="submit">Subscribe</Button>
-                </div>
-                {status && <div className="sent-message">{status}</div>}
-              </Form>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-
       {/* Footer Links Section */}
       <Container className="footer-top justify-content-center">
         <Row className="gy-4 ">
@@ -165,7 +122,7 @@ export default function Footer() {
         </p>
         <div className="credits">Designed by Byte Size IT Solutions</div>
       </Container>
-      {isVisible && (
+      {isVisible && !testimonialModalOpen && !portfolioModalOpen && (
         <a
           href="#"
           id="scroll-top"

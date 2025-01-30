@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Row,
@@ -9,6 +9,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import { generateCaptcha } from "../utilities/captchaUtils";
 import "../assets/css/contactSection.css";
 
 export default function ContactSection() {
@@ -20,13 +21,33 @@ export default function ContactSection() {
   });
 
   const [status, setStatus] = useState("");
+  const [captcha, setCaptcha] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleCaptchaChange = (e) => {
+    setCaptchaInput(e.target.value);
+  };
+
+  useEffect(() => {
+    // Generate a new CAPTCHA when the component mounts
+    setCaptcha(generateCaptcha());
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if CAPTCHA matches
+    if (captchaInput !== captcha) {
+      setStatus("Captcha does not match. Please try again.");
+      setCaptcha(generateCaptcha()); // Regenerate captcha after successful submission
+      setCaptchaInput("");
+      return;
+    }
+
     // Handle form submission logic here (e.g., sending data to an API)
     setStatus("Message sent! Thank you!");
     setFormData({
@@ -35,6 +56,8 @@ export default function ContactSection() {
       subject: "",
       message: "",
     });
+    setCaptcha(generateCaptcha()); // Regenerate captcha after successful submission
+    setCaptchaInput(""); // Reset captcha input
   };
 
   return (
@@ -160,6 +183,39 @@ export default function ContactSection() {
                         required
                       />
                     </FormGroup>
+                  </Col>
+                  <Col>
+                    {/* CAPTCHA Section */}
+                    <div className="captcha-section">
+                      <p>
+                        {/* <span className="captcha-text">{captcha}</span> */}
+                        <span className="captcha-text">
+                          {captcha.split("").map((char, index) => (
+                            <span
+                              key={index}
+                              className={`captcha-letter letter-${index}`}
+                            >
+                              {char}
+                            </span>
+                          ))}
+                        </span>
+                        <i
+                          className="bi bi-arrow-clockwise refresh-icon"
+                          onClick={() => setCaptcha(generateCaptcha())}
+                          role="button"
+                          aria-label="Refresh CAPTCHA"
+                        ></i>
+                      </p>
+                      <input
+                        type="text"
+                        name="captcha"
+                        value={captchaInput}
+                        onChange={handleCaptchaChange}
+                        placeholder="Enter captcha"
+                        style={{ background: "#ffffff" }}
+                        required
+                      />
+                    </div>
                   </Col>
 
                   <Col md={12} className="text-center">
