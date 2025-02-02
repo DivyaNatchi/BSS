@@ -61,17 +61,18 @@ export default function PortfolioSection({
         {/* Swiper Component for Testimonials */}
         <Swiper
           modules={[Autoplay, Pagination]}
+          pagination={{ clickable: true }}
           loop={true}
           speed={600}
           autoplay={{
             delay: 5000,
           }}
           spaceBetween={30}
-          pagination={{
-            el: ".swiper-pagination",
-            type: "bullets",
-            clickable: true,
-          }}
+          // pagination={{
+          //   el: ".swiper-pagination",
+          //   type: "bullets",
+          //   clickable: true,
+          // }}
           breakpoints={{
             587: {
               slidesPerView: 2, // Adjust for larger screens

@@ -37,6 +37,7 @@ export default function TestimonialsSection({
         {/* Swiper Component for Testimonials */}
         <Swiper
           modules={[Autoplay, Pagination]}
+          pagination={{ clickable: true }}
           loop={true}
           speed={600}
           autoplay={{
@@ -44,11 +45,11 @@ export default function TestimonialsSection({
             disableOnInteraction: false,
           }}
           slidesPerView={1}
-          pagination={{
-            el: ".swiper-pagination",
-            type: "bullets",
-            clickable: true,
-          }}
+          // pagination={{
+          //   el: ".swiper-pagination",
+          //   type: "bullets",
+          //   clickable: true,
+          // }}
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>

@@ -6,7 +6,7 @@ import mac from "../assets/img/testimonials/MAC.jpg";
 const testimonials = [
   {
     name: "Annja",
-    title: "Ceo & Founder",
+    title: "CEO & Founder",
     image: anlo,
     feedback: `Byte Size has delivered an application that has rapidly become an invaluable part of how we operate, and they have done so at a highly competitive cost to the business. They understood our frustration with the output from Harvest and developed an innovative solution.`,
     hasReadMore: true,

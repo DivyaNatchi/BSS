@@ -7,7 +7,7 @@ import TechlogosSection from "./components/TechLogosSection";
 import AboutSection from "./components/AboutSection";
 import WhyUsSection from "./components/WhyUsSection";
 import SkillsSection from "./components/SkillsSection";
-import ServicesSection from "./components/Services/ServicesSection";
+import ServicesSection from "./components/ServicesSection";
 import CallToActionSection from "./components/CallToActionSection";
 import PortfolioSection from "./components/Portfolio/PortfolioSection";
 import TeamSection from "./components/TeamSection";

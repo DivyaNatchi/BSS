@@ -95,7 +95,9 @@ export default function NewsLetterSection() {
                   />
                 </div>
 
-                <Button type="submit">Subscribe</Button>
+                <Button type="submit" color="primary">
+                  Subscribe
+                </Button>
 
                 {status && (
                   <div

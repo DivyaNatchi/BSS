@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import "../../assets/css/servicesSection.css";
-import servicesData from "../../data/serviceData";
+import "../assets/css/servicesSection.css";
+import servicesData from "../data/serviceData";
 
 export default function ServicesSection() {
   return (

@@ -84,7 +84,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div
+              {/* <div
                 className="info-item d-flex"
                 data-aos="fade-up"
                 data-aos-delay="300"
@@ -94,7 +94,7 @@ export default function ContactSection() {
                   <h3>Call Us</h3>
                   <p>+44 7982 594 224</p>
                 </div>
-              </div>
+              </div> */}
 
               <div
                 className="info-item d-flex"

@@ -114,25 +114,25 @@
 }
 
 /* Adjust card appearance inside Swiper */
-.swiper-slide {
+.portfolio .swiper-slide {
   padding: 10px;
   width: 50%;
   box-sizing: border-box;
 }
 
+.portfolio .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
 /* Pagination bullets fix */
-.swiper-pagination-bullets {
+.portfolio .swiper-pagination-bullets {
   bottom: 15px; /* Adjust if needed */
   z-index: 10;
 }
 
-.swiper-pagination-bullet {
-  background-color: #007bff; /* Make sure bullets are visible */
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #0056b3;
+.portfolio .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
 }
 
 .btn-portfolio_close {
