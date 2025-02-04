@@ -61,6 +61,7 @@
 
 .why-us .faq-container .faq-item .faq-content p {
   margin-bottom: 0;
+  text-align: justify;
 }
 
 .why-us .faq-container .faq-item .faq-icon {

@@ -36,32 +36,15 @@ export default function AboutSection() {
               cutting-edge technology, efficient processes, and a
               customer-centric approach.
             </p>
-            {/* <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul className="list-unstyled">
-              <li>
-                <i className="bi bi-check2-circle me-2"></i>
-                <span>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </span>
-              </li>
-              <li>
-                <i className="bi bi-check2-circle me-2"></i>
-                <span>
-                  Duis aute irure dolor in reprehenderit in voluptate velit.
-                </span>
-              </li>
-              <li>
-                <i className="bi bi-check2-circle me-2"></i>
-                <span>Ullamco laboris nisi ut aliquip ex ea commodo.</span>
-              </li>
-            </ul> */}
           </Col>
 
           {/* Right Content */}
-          <Col lg={6} data-aos="fade-up" data-aos-delay="200">
+          <Col
+            lg={6}
+            className="content"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <i className="bi bi-check2-circle me-2"></i>
             <span>Our Commitment</span>
             <p>

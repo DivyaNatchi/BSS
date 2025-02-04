@@ -60,7 +60,7 @@ export default function WhyUsSection() {
             </div>
 
             <div
-              className="faq-container px-xl-5"
+              className="faq-container px-xl-5 mt-4"
               data-aos="fade-up"
               data-aos-delay="200"
             >
